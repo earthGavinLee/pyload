@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+
+from module.plugins.internal.DeadHoster import DeadHoster, create_getInfo
+
+
+class NetloadIn(DeadHoster):
+    __name__    = "NetloadIn"
+    __type__    = "hoster"
+    __version__ = "0.51"
+    __status__  = "testing"
+
+    __pattern__ = r'https?://(?:www\.)?netload\.(in|me)/(?P<PATH>datei|index\.php\?id=10&file_id=)(?P<ID>\w+)'
+    __config__  = []  #@TODO: Remove in 0.4.10
+
+    __description__ = """Netload.in hoster plugin"""
+    __license__     = "GPLv3"
+    __authors__     = [("spoob", "spoob@pyload.org"),
+                       ("RaNaN", "ranan@pyload.org"),
+                       ("Gregy", "gregy@gregy.cz"  )]
+
+
+getInfo = create_getInfo(NetloadIn)
